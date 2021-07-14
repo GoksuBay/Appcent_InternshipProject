@@ -16,14 +16,14 @@ struct WearModel : Decodable {
     var rate:Double
     var description:String
     var category:String
-    var images: [URL]
+    var images: [String]
 }
 
 struct FoodModel : Decodable{
     var id:Int
     var title:String
     var price:String
-    var image:[URL]
+    var image:[String]
 }
 
 struct FoodBaseModel : Decodable {
@@ -32,6 +32,6 @@ struct FoodBaseModel : Decodable {
 }
 
 struct FoodImages : Decodable{
-    var image:URL
+    var image:String
 }
 

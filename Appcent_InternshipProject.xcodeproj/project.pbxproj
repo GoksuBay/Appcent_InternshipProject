@@ -17,6 +17,8 @@
 		6545FFAD269D66A100FE36BD /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6545FFAC269D66A100FE36BD /* APIService.swift */; };
 		6545FFAF269D67A400FE36BD /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6545FFAE269D67A400FE36BD /* Products.swift */; };
 		6545FFB1269D6C6F00FE36BD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6545FFB0269D6C6F00FE36BD /* Constants.swift */; };
+		6545FFB4269EC9CD00FE36BD /* WearViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6545FFB3269EC9CD00FE36BD /* WearViewModel.swift */; };
+		6545FFB6269ECC2500FE36BD /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6545FFB5269ECC2500FE36BD /* FoodViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		6545FFAC269D66A100FE36BD /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		6545FFAE269D67A400FE36BD /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		6545FFB0269D6C6F00FE36BD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6545FFB3269EC9CD00FE36BD /* WearViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WearViewModel.swift; sourceTree = "<group>"; };
+		6545FFB5269ECC2500FE36BD /* FoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 				6545FFA7269D642600FE36BD /* Services */,
 				6545FFA8269D648900FE36BD /* Views */,
 				6545FFA9269D648F00FE36BD /* Models */,
+				6545FFB2269EC9B700FE36BD /* ViewModels */,
 				6545FFA1269D640900FE36BD /* Info.plist */,
 				6545FF99269D640900FE36BD /* Appcent_InternshipProject.xcdatamodeld */,
 			);
@@ -117,6 +122,15 @@
 				6545FF9E269D640900FE36BD /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		6545FFB2269EC9B700FE36BD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6545FFB3269EC9CD00FE36BD /* WearViewModel.swift */,
+				6545FFB5269ECC2500FE36BD /* FoodViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +208,8 @@
 				6545FF91269D640900FE36BD /* AppDelegate.swift in Sources */,
 				6545FFAF269D67A400FE36BD /* Products.swift in Sources */,
 				6545FFB1269D6C6F00FE36BD /* Constants.swift in Sources */,
+				6545FFB6269ECC2500FE36BD /* FoodViewModel.swift in Sources */,
+				6545FFB4269EC9CD00FE36BD /* WearViewModel.swift in Sources */,
 				6545FF93269D640900FE36BD /* SceneDelegate.swift in Sources */,
 				6545FF9B269D640900FE36BD /* Appcent_InternshipProject.xcdatamodeld in Sources */,
 			);

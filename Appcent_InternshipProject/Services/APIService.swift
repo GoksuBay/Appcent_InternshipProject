@@ -8,7 +8,11 @@
 import Foundation
 
 class APIService{
+    
     static let shared = APIService()
+    
+    let imageCache = NSCache<NSString, NSData>()
+    
     func getWears(completion:@escaping (_ wearData:[WearModel]? , _ error: Error?) -> Void){
         postType(type: Constants.WEARTYPE) { wearModel, foodModel, error in
             completion(wearModel,error)
@@ -102,5 +106,25 @@ extension APIService {
                     break
                 
         }
+    }
+    
+    
+    func getImage(urlString: String, completion: @escaping (Data?) -> Void){
+            guard let url = URL(string: urlString) else{
+                completion(nil)
+                return
+            }
+            
+            if let cachedImage = imageCache.object(forKey: NSString(string: urlString)){
+                completion(cachedImage as Data)
+            } else{
+                URLSession.shared.dataTask(with: url){(data,response,error) in
+                    guard error == nil , let data = data
+                    else {completion(nil) ;  return}
+                    
+                    self.imageCache.setObject(data as NSData, forKey: NSString(string: urlString))
+                    completion(data)
+                }.resume()
+            }
     }
 }
