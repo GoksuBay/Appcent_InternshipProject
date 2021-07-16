@@ -8,7 +8,35 @@
 import UIKit
 
 class SingleMenuTableViewCell: UITableViewCell {
-
+    
+    var icon = UIImageView()
+    let label = UILabel()
+    
+    func createView(){
+        self.contentView.addSubview(icon)
+        icon.topAnchor.constraint(equalTo: self.contentView.centerYAnchor, constant: -20).isActive = true
+        icon.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 16).isActive = true
+        icon.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.7).isActive = true
+        icon.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.1).isActive = true
+        icon.translatesAutoresizingMaskIntoConstraints = false
+        icon.tintColor = .orange
+        
+        label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
+        self.contentView.addSubview(label)
+        label.topAnchor.constraint(equalTo: self.contentView.centerYAnchor, constant: -10).isActive = true
+        label.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 66).isActive = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        createView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -13,4 +13,5 @@ struct Constants{
     static let WEARTYPE = 1
     static let FOODTYPE = 2
     static let HEADERTABLE_IDENTIFIER = "HeaderTableViewCell"
+    static let SINGLEMENU_IDENTIFIER = "SingleMenuTableViewCell"
 }

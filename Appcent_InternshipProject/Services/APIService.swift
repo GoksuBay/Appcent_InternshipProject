@@ -51,7 +51,6 @@ extension APIService {
                         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
                         request.addValue("application/json", forHTTPHeaderField: "Accept")
                         request.addValue(Constants.AUTHORIZATION, forHTTPHeaderField: "Authorization")
-                        print(request.allHTTPHeaderFields)
                         URLSession.shared.dataTask(with: request) { data, response, error in
                             
                             if let error = error {
@@ -67,6 +66,7 @@ extension APIService {
                     }
        
                     break
+                
             case Constants.FOODTYPE:
                     guard let url = URL(string: Constants.URL + "/products")
                     else {
