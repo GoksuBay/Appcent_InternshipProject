@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ToggleMenuTableViewCell: UITableViewCell {
+class ToggleMenuTableViewCell: UITableViewCell, ReusableView {
     
-    let icon = UIImageView()
-    let label = UILabel()
-    let switchButton = UISwitch()
+    private let icon = UIImageView()
+    private let label = UILabel()
+    private let switchButton = UISwitch()
     
-    func createView(){
+    private func createView(){
         self.contentView.addSubview(icon)
         icon.topAnchor.constraint(equalTo: self.contentView.centerYAnchor, constant: -20).isActive = true
         icon.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 16).isActive = true
@@ -21,6 +21,7 @@ class ToggleMenuTableViewCell: UITableViewCell {
         icon.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.1).isActive = true
         icon.translatesAutoresizingMaskIntoConstraints = false
         icon.tintColor = .orange
+        icon.contentMode = .scaleAspectFit
         
         label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         self.contentView.addSubview(label)
@@ -49,10 +50,8 @@ class ToggleMenuTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configureCell(menu: ProfileMenuItem) {
+        icon.image = UIImage(systemName: menu.imageName)
+        label.text = menu.title
     }
-
 }

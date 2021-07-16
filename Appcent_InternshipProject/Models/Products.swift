@@ -7,31 +7,30 @@
 
 import Foundation
 
-struct WearModel : Decodable {
-    var id:Int
-    var title:String
-    var price:String
-    var hasDiscound:Bool?
-    var oldPrice:String?
-    var rate:Double
-    var description:String
-    var category:String
-    var images: [String]
+struct WearModel: Decodable {
+    let id: Int
+    let title: String
+    let price: String
+    let hasDiscound: Bool?
+    let oldPrice: String?
+    let rate: Double
+    let description: String
+    let category: String
+    let images: [String]
 }
 
-struct FoodModel : Decodable{
-    var id:Int
-    var title:String
-    var price:String
-    var image:[String]
+struct FoodModel: Decodable{
+    let id: Int
+    let title: String
+    let price: String
+    let image: String
 }
 
-struct FoodBaseModel : Decodable {
-    var banners:[FoodImages]
-    var foods:[FoodModel]
+struct FoodBaseModel: Decodable {
+    let banners: [FoodImages]
+    let foods: [FoodModel]
 }
 
-struct FoodImages : Decodable{
-    var image:String
+struct FoodImages: Decodable{
+    let image: String
 }
-

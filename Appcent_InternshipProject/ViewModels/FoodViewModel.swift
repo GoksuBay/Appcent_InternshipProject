@@ -8,21 +8,21 @@
 import Foundation
 
 struct FoodViewModel {
-    let food : FoodModel
+    let food: FoodModel
     
-    var id : Int {
+    var id: Int {
         return self.food.id
     }
     
-    var title : String {
+    var title: String {
         return self.food.title
     }
     
-    var price : String {
+    var price: String {
         return self.food.price
     }
     
-    var image :  [String] {
+    var image: String {
         return self.food.image
     }
 }

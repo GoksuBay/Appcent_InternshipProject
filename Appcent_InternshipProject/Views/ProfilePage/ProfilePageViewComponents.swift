@@ -17,8 +17,6 @@ extension ProfilePageViewController {
         tableView.rowHeight = 50
         tableView.tableHeaderView = headerView
         tableView.tableFooterView = UIView()
-        
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -27,9 +25,8 @@ extension ProfilePageViewController {
     }
     
     func register(){
-        tableView.register(HeaderTableViewCell.self, forCellReuseIdentifier: Constants.HEADERTABLE_IDENTIFIER)
-        tableView.register(SingleMenuTableViewCell.self, forCellReuseIdentifier: Constants.SINGLEMENU_IDENTIFIER)
-        tableView.register(ToggleMenuTableViewCell.self, forCellReuseIdentifier: Constants.TOGGLEMENU_IDENTIFIER)
+        tableView.register(HeaderTableViewCell.self, forCellReuseIdentifier: HeaderTableViewCell.reuseIdentifier)
+        tableView.register(SingleMenuTableViewCell.self, forCellReuseIdentifier: SingleMenuTableViewCell.reuseIdentifier)
+        tableView.register(ToggleMenuTableViewCell.self, forCellReuseIdentifier: ToggleMenuTableViewCell.reuseIdentifier)
     }
-    
 }

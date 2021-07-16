@@ -11,12 +11,17 @@ class ShoppingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        APIService.shared.getFoods { foods, error in
-            print(error)
+
+        APIService.shared.getProducts(with: .food) {
+            (response: Result<FoodBaseModel, AppternError>) in
+            
+            switch response {
+                case .failure(let error):
+                    print(error)
+                case .success(let res):
+                    print(res.foods)
+            }
         }
     }
-
-
 }
 
