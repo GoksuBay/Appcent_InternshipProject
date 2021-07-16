@@ -5,7 +5,7 @@
 //  Created by Goksubay on 15.07.2021.
 //
 
-import Foundation
+import UIKit
 
 extension ProfilePageViewController {
     
@@ -16,6 +16,7 @@ extension ProfilePageViewController {
         tableView.dataSource = self
         tableView.rowHeight = 50
         tableView.tableHeaderView = headerView
+        tableView.tableFooterView = UIView()
         
         
     }
@@ -28,6 +29,7 @@ extension ProfilePageViewController {
     func register(){
         tableView.register(HeaderTableViewCell.self, forCellReuseIdentifier: Constants.HEADERTABLE_IDENTIFIER)
         tableView.register(SingleMenuTableViewCell.self, forCellReuseIdentifier: Constants.SINGLEMENU_IDENTIFIER)
+        tableView.register(ToggleMenuTableViewCell.self, forCellReuseIdentifier: Constants.TOGGLEMENU_IDENTIFIER)
     }
     
 }

@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Alışveriş-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ShoppingViewController" customModule="Appcent_InternshipProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="cart.fill" catalog="system" id="KLd-e0-YDc"/>
+                    <tabBarItem key="tabBarItem" title="Alışveriş" image="cart.fill" catalog="system" id="KLd-e0-YDc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,7 +44,7 @@
             </objects>
             <point key="canvasLocation" x="-1114" y="151"/>
         </scene>
-        <!--Item-->
+        <!--Favoriler-->
         <scene sceneID="cUU-2N-w07">
             <objects>
                 <viewController id="YQe-wq-AlJ" sceneMemberID="viewController">
@@ -54,13 +54,13 @@
                         <viewLayoutGuide key="safeArea" id="6O3-Ay-VWy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="star.fill" catalog="system" id="DRe-sU-2v9"/>
+                    <tabBarItem key="tabBarItem" title="Favoriler" image="star.fill" catalog="system" id="DRe-sU-2v9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gWx-ox-kAj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="841" y="151"/>
         </scene>
-        <!--Item-->
+        <!--Profil-->
         <scene sceneID="ngs-wp-bNa">
             <objects>
                 <viewController id="LqE-lF-qCQ" customClass="ProfilePageViewController" customModule="Appcent_InternshipProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -70,7 +70,7 @@
                         <viewLayoutGuide key="safeArea" id="m7G-8H-sjq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="person.fill" catalog="system" id="Go4-k6-gWC"/>
+                    <tabBarItem key="tabBarItem" title="Profil" image="person.fill" catalog="system" id="Go4-k6-gWC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p53-20-aEG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

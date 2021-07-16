@@ -1,5 +1,5 @@
 //
-//  SingleMenuTableViewCell.swift
+//  ToggleMenuTableViewCell.swift
 //  Appcent_InternshipProject
 //
 //  Created by Goksubay on 16.07.2021.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class SingleMenuTableViewCell: UITableViewCell {
+class ToggleMenuTableViewCell: UITableViewCell {
     
     let icon = UIImageView()
     let label = UILabel()
-    let arrow = UIImageView()
+    let switchButton = UISwitch()
     
     func createView(){
         self.contentView.addSubview(icon)
@@ -28,11 +28,11 @@ class SingleMenuTableViewCell: UITableViewCell {
         label.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 66).isActive = true
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        self.contentView.addSubview(arrow)
-        arrow.topAnchor.constraint(equalTo: self.contentView.centerYAnchor, constant: -10).isActive = true
-        arrow.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -16).isActive = true
-        arrow.translatesAutoresizingMaskIntoConstraints = false
-        arrow.tintColor = .orange
+        self.contentView.addSubview(switchButton)
+        switchButton.topAnchor.constraint(equalTo: self.contentView.centerYAnchor, constant: -10).isActive = true
+        switchButton.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -16).isActive = true
+        switchButton.translatesAutoresizingMaskIntoConstraints = false
+        switchButton.onTintColor = .orange
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -43,7 +43,7 @@ class SingleMenuTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
