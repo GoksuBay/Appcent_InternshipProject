@@ -12,4 +12,5 @@ struct Constants{
     static let AUTHORIZATION = "apptern2013"
     static let WEARTYPE = 1
     static let FOODTYPE = 2
+    static let HEADERTABLE_IDENTIFIER = "HeaderTableViewCell"
 }
