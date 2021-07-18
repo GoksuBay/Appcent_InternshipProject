@@ -8,42 +8,41 @@
 import Foundation
 
 struct WearViewModel {
-    let wear : WearModel
+    let wear: WearModel
     
-    var id : Int {
+    var id: Int {
         return self.wear.id
     }
     
-    var title : String {
+    var title: String {
         return self.wear.title
     }
     
-    var price : String {
+    var price: String {
         return self.wear.price
     }
     
-    var hasDiscound : Bool {
+    var hasDiscound: Bool {
         return self.wear.hasDiscound ?? false
     }
     
-    var oldPrice : String {
+    var oldPrice: String {
         return self.wear.oldPrice ?? ""
     }
     
-    var rate : Double {
+    var rate: Double {
         return self.wear.rate
     }
     
-    var description : String {
+    var description: String {
         return self.wear.description
     }
     
-    var category : String {
+    var category: String {
         return self.wear.category
     }
 
-    var images : [String] {
+    var images: [String] {
         return self.wear.images
     }
-    
 }

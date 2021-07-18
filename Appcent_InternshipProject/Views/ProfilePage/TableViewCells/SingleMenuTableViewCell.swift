@@ -7,32 +7,43 @@
 
 import UIKit
 
-class SingleMenuTableViewCell: UITableViewCell {
+class SingleMenuTableViewCell: UITableViewCell, ReusableView {
     
-    let icon = UIImageView()
-    let label = UILabel()
-    let arrow = UIImageView()
+    private let icon = UIImageView()
+    private let label = UILabel()
+    private let arrow = UIImageView()
     
-    func createView(){
+    private func createView() {
         self.contentView.addSubview(icon)
-        icon.topAnchor.constraint(equalTo: self.contentView.centerYAnchor, constant: -20).isActive = true
-        icon.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 16).isActive = true
-        icon.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.7).isActive = true
-        icon.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.1).isActive = true
+        self.contentView.addSubview(label)
+        self.contentView.addSubview(arrow)
+
         icon.translatesAutoresizingMaskIntoConstraints = false
         icon.tintColor = .orange
+        icon.contentMode = .scaleAspectFit
         
         label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
-        self.contentView.addSubview(label)
-        label.topAnchor.constraint(equalTo: self.contentView.centerYAnchor, constant: -10).isActive = true
-        label.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 66).isActive = true
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        self.contentView.addSubview(arrow)
-        arrow.topAnchor.constraint(equalTo: self.contentView.centerYAnchor, constant: -10).isActive = true
-        arrow.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -16).isActive = true
         arrow.translatesAutoresizingMaskIntoConstraints = false
         arrow.tintColor = .orange
+        
+        setConstraints()
+    }
+    
+    private func setConstraints() {
+        NSLayoutConstraint.activate([
+            icon.topAnchor.constraint(equalTo: self.contentView.centerYAnchor, constant: -20),
+            icon.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 16),
+            icon.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.7),
+            icon.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.1),
+            
+            label.topAnchor.constraint(equalTo: self.contentView.centerYAnchor, constant: -10),
+            label.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 66),
+            
+            arrow.topAnchor.constraint(equalTo: self.contentView.centerYAnchor, constant: -10),
+            arrow.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -16)
+        ])
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -48,11 +59,9 @@ class SingleMenuTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func configureCell(menu: ProfileMenuItem) {
+        icon.image = UIImage(systemName: menu.imageName)
+        label.text = menu.title
     }
-
 }

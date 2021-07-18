@@ -7,10 +7,10 @@
 
 import UIKit
 
-class HeaderTableViewCell: UITableViewCell {
+class HeaderTableViewCell: UITableViewCell, ReusableView {
     
-    let headerLabel = UILabel()
-    let lowerLabel = UILabel()
+    private let headerLabel = UILabel()
+    private let lowerLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -21,7 +21,7 @@ class HeaderTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func createView(){
+    private func createView() {
         
         // self.contentView.addsubView or self.addSubview ?
         headerLabel.text = "Göksu Bayram"
@@ -51,10 +51,8 @@ class HeaderTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configureCell(fullName: String, email: String) {
+        headerLabel.text = fullName
+        lowerLabel.text = email
     }
-    
 }

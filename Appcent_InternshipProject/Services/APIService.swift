@@ -7,124 +7,93 @@
 
 import Foundation
 
-class APIService{
+class APIService {
     
     static let shared = APIService()
-    
-    let imageCache = NSCache<NSString, NSData>()
-    
-    func getWears(completion:@escaping (_ wearData:[WearModel]? , _ error: Error?) -> Void){
-        postType(type: Constants.WEARTYPE) { wearModel, foodModel, error in
-            completion(wearModel,error)
-        }
-    }
-    
-    func getFoods(completion:@escaping (_ foodData:[FoodModel]? , _ error: Error?) -> Void){
-        postType(type: Constants.FOODTYPE) { wearModel, foodModel, error in
-            completion(foodModel,error)
-        }
+
+    func getProducts<T: Decodable>(with type: ProductType,
+                                   completion: @escaping (Result<T, AppternError>) -> Void) {
+        let params = ["type": type.rawValue]
+        callService(url: Constants.Product.products, method: .post, parameters: params, completion: completion)
     }
 }
 
 
 extension APIService {
-    /* This function is private to avoid using type parameters. There are auxiliary function to define type*/
-    private func postType(type: Int, completion:@escaping (_ wearData:[WearModel]? , _ foodData:[FoodModel]? , _ error: Error?) -> Void){
+    private func callService<T: Decodable>(url: String,
+                                           method: MethodType,
+                                           parameters: [String: Any]? = nil,
+                                           headers: [String: String]? = nil,
+                                           completion: @escaping (Result<T, AppternError>) -> Void) {
         
-        switch type {
-            case Constants.WEARTYPE:
-                    guard let url = URL(string: Constants.URL + "/products")
-                    else {
-                        completion(nil,nil,nil) // TODO: Return Error as String, write a Extension for this.
-                        return
-                    }
-                    
-                    let JSON : [String:Any] = [
-                        "type" : type
-                    ]
-                    
-                    do {
-                        let data = try JSONSerialization.data(withJSONObject: JSON, options: [])
-                        var request = URLRequest(url: url)
-                        request.httpMethod = "POST"
-                        request.httpBody = data
-                        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-                        request.addValue("application/json", forHTTPHeaderField: "Accept")
-                        request.addValue(Constants.AUTHORIZATION, forHTTPHeaderField: "Authorization")
-                        URLSession.shared.dataTask(with: request) { data, response, error in
-                            
-                            if let error = error {
-                                completion(nil,nil,error)
-                            }
-                            if let data = data{
-                                let wears = try? JSONDecoder().decode([WearModel].self, from: data)
-                                wears == nil ? completion(nil,nil,error) : completion(wears,nil,nil)
-                            }
-                        }.resume()
-                    } catch {
-                        print("error")
-                    }
-       
-                    break
-                
-            case Constants.FOODTYPE:
-                    guard let url = URL(string: Constants.URL + "/products")
-                    else {
-                        completion(nil,nil,nil) // TODO: Return Error as String, write a Extension for this.
-                        return
-                    }
-                    
-                    let JSON : [String:Any] = [
-                        "type" : type
-                    ]
-                    
-                    do {
-                        let data = try JSONSerialization.data(withJSONObject: JSON, options: [])
-                        var request = URLRequest(url: url)
-                        request.httpMethod = "POST"
-                        request.httpBody = data
-                        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-                        request.addValue("application/json", forHTTPHeaderField: "Accept")
-                        request.addValue(Constants.AUTHORIZATION, forHTTPHeaderField: "Authorization")
-                        print(request.allHTTPHeaderFields)
-                        URLSession.shared.dataTask(with: request) { data, response, error in
-                            if let error = error {
-                                completion(nil,nil,error)
-                            }
-                            if let data = data{
-                                let foods = try? JSONDecoder().decode([FoodModel].self, from: data)
-                                foods == nil ? completion(nil,nil,error) : completion(nil,foods,nil)
-                            }
-                        }.resume()
-                    } catch {
-                        print("error")
-                    }
-                   
-                    break
-                default:
-                    completion(nil,nil,nil) // TODO: Return Error as String, write a Extension for this.
-                    break
-                
+        guard let url = URL(string: url) else {
+            completion(.failure(.requestError))
+            return
         }
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = method.rawValue
+        
+        if let parameters = parameters {
+            guard let data = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
+                completion(.failure(.requestError))
+                return
+            }
+            request.httpBody = data
+        }
+   
+        self.setHeaders(request: &request)
+        
+        execute(request: request, completion: completion)
     }
-    
-    
-    func getImage(urlString: String, completion: @escaping (Data?) -> Void){
-            guard let url = URL(string: urlString) else{
-                completion(nil)
+}
+
+// MARK: - Headers
+extension APIService {
+    private func setHeaders(request: inout URLRequest, headers: [String: String]? = nil) {
+        //Default Headers for all request
+        request.addValue(Constants.AUTHORIZATION, forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        //External Headers
+        headers?.forEach({ (key, value) in
+            request.addValue(value, forHTTPHeaderField: key)
+        })
+        
+        //Log
+        print(request.allHTTPHeaderFields ?? [])
+    }
+}
+
+// MARK: - Execute
+extension APIService {
+    //Generic network method
+    private func execute<T: Decodable>(request: URLRequest,
+                                       completion: @escaping (Result<T, AppternError>) -> Void) {
+        
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if let error = error {
+                completion(.failure(.defaultError(error)))
                 return
             }
             
-            if let cachedImage = imageCache.object(forKey: NSString(string: urlString)){
-                completion(cachedImage as Data)
-            } else{
-                URLSession.shared.dataTask(with: url){(data,response,error) in
-                    guard error == nil , let data = data
-                    else {completion(nil) ;  return}
-                    
-                    self.imageCache.setObject(data as NSData, forKey: NSString(string: urlString))
-                    completion(data)
-                }.resume()
+            if let jsonResponse = String(data: data!, encoding: String.Encoding.utf8) {
+                print("JSON String: \(jsonResponse)")
             }
+            
+            if let data = data {
+                do {
+                    let res = try JSONDecoder().decode(T.self, from: data)
+                    completion(.success(res))
+                } catch (let error) {
+                    print("Decode Error: \(error)")
+                    completion(.failure(.decodeError))
+                }
+            }
+        }.resume()
     }
 }
