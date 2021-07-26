@@ -17,8 +17,7 @@ extension ProfilePageViewController {
         tableView.rowHeight = 50
         tableView.tableHeaderView = headerView
         tableView.tableFooterView = UIView()
-        
-        
+
     }
     
     override func viewDidLayoutSubviews() {

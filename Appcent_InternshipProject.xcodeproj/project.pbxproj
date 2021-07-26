@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		652C7C7826AEBCEC0009BB71 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652C7C7626AEBCEC0009BB71 /* CollectionViewCell.swift */; };
+		652C7C7B26AEC9EF0009BB71 /* WearList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652C7C7A26AEC9EF0009BB71 /* WearList.swift */; };
+		652C7C7D26AED0E70009BB71 /* WearCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652C7C7C26AED0E70009BB71 /* WearCollectionViewModel.swift */; };
 		652DACAB26A0AD260041DC44 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652DACAA26A0AD260041DC44 /* ProfilePageViewController.swift */; };
 		652DACAD26A0BA640041DC44 /* ProfilePageViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652DACAC26A0BA630041DC44 /* ProfilePageViewComponents.swift */; };
 		652DACB326A0C0EE0041DC44 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652DACB126A0C0EE0041DC44 /* HeaderTableViewCell.swift */; };
+		6541858326A72D6C00FDDFB2 /* ShoppingViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6541858226A72D6C00FDDFB2 /* ShoppingViewComponent.swift */; };
+		6541858626A72E4500FDDFB2 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6541858526A72E4500FDDFB2 /* ReusableView.swift */; };
 		6545FF91269D640900FE36BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6545FF90269D640900FE36BD /* AppDelegate.swift */; };
 		6545FF93269D640900FE36BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6545FF92269D640900FE36BD /* SceneDelegate.swift */; };
 		6545FF95269D640900FE36BD /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6545FF94269D640900FE36BD /* ShoppingViewController.swift */; };
@@ -28,9 +33,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		652C7C7626AEBCEC0009BB71 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		652C7C7A26AEC9EF0009BB71 /* WearList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WearList.swift; sourceTree = "<group>"; };
+		652C7C7C26AED0E70009BB71 /* WearCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WearCollectionViewModel.swift; sourceTree = "<group>"; };
 		652DACAA26A0AD260041DC44 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		652DACAC26A0BA630041DC44 /* ProfilePageViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewComponents.swift; sourceTree = "<group>"; };
 		652DACB126A0C0EE0041DC44 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		6541858226A72D6C00FDDFB2 /* ShoppingViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewComponent.swift; sourceTree = "<group>"; };
+		6541858526A72E4500FDDFB2 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		6545FF8D269D640900FE36BD /* Appcent_InternshipProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appcent_InternshipProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6545FF90269D640900FE36BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6545FF92269D640900FE36BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +91,32 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
+		6541858126A72D4C00FDDFB2 /* ShoppingPage */ = {
+			isa = PBXGroup;
+			children = (
+				6541858726A72F8A00FDDFB2 /* CollectionViewCell */,
+				6545FF94269D640900FE36BD /* ShoppingViewController.swift */,
+				6541858226A72D6C00FDDFB2 /* ShoppingViewComponent.swift */,
+			);
+			path = ShoppingPage;
+			sourceTree = "<group>";
+		};
+		6541858426A72E3400FDDFB2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6541858526A72E4500FDDFB2 /* ReusableView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		6541858726A72F8A00FDDFB2 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				652C7C7626AEBCEC0009BB71 /* CollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		6545FF84269D640800FE36BD = {
 			isa = PBXGroup;
 			children = (
@@ -123,8 +159,8 @@
 		6545FFA8269D648900FE36BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6541858126A72D4C00FDDFB2 /* ShoppingPage */,
 				652DACA926A0AD100041DC44 /* ProfilePage */,
-				6545FF94269D640900FE36BD /* ShoppingViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +198,7 @@
 			children = (
 				6545FFB3269EC9CD00FE36BD /* WearViewModel.swift */,
 				6545FFB5269ECC2500FE36BD /* FoodViewModel.swift */,
+				652C7C7C26AED0E70009BB71 /* WearCollectionViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -169,8 +206,10 @@
 		6575C78126A1681D007FEA04 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				6541858426A72E3400FDDFB2 /* Protocols */,
 				6545FFB0269D6C6F00FE36BD /* Constants.swift */,
 				6575C78226A1685E007FEA04 /* ProfileCellEnums.swift */,
+				652C7C7A26AEC9EF0009BB71 /* WearList.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -246,6 +285,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6545FF95269D640900FE36BD /* ShoppingViewController.swift in Sources */,
+				6541858626A72E4500FDDFB2 /* ReusableView.swift in Sources */,
+				652C7C7826AEBCEC0009BB71 /* CollectionViewCell.swift in Sources */,
 				6545FFAD269D66A100FE36BD /* APIService.swift in Sources */,
 				6545FF91269D640900FE36BD /* AppDelegate.swift in Sources */,
 				6545FFAF269D67A400FE36BD /* Products.swift in Sources */,
@@ -254,11 +295,14 @@
 				6545FFB1269D6C6F00FE36BD /* Constants.swift in Sources */,
 				6575C78326A1685E007FEA04 /* ProfileCellEnums.swift in Sources */,
 				652DACAB26A0AD260041DC44 /* ProfilePageViewController.swift in Sources */,
+				652C7C7D26AED0E70009BB71 /* WearCollectionViewModel.swift in Sources */,
 				6545FFB6269ECC2500FE36BD /* FoodViewModel.swift in Sources */,
 				652DACAD26A0BA640041DC44 /* ProfilePageViewComponents.swift in Sources */,
 				6545FFB4269EC9CD00FE36BD /* WearViewModel.swift in Sources */,
+				6541858326A72D6C00FDDFB2 /* ShoppingViewComponent.swift in Sources */,
 				6545FF93269D640900FE36BD /* SceneDelegate.swift in Sources */,
 				6545FF9B269D640900FE36BD /* Appcent_InternshipProject.xcdatamodeld in Sources */,
+				652C7C7B26AEC9EF0009BB71 /* WearList.swift in Sources */,
 				6575C78726A1A37A007FEA04 /* ToggleMenuTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

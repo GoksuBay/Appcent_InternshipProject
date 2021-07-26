@@ -19,6 +19,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Alışveriş" image="cart.fill" catalog="system" id="KLd-e0-YDc"/>
+                    <navigationItem key="navigationItem" id="X7E-Eq-78a"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -28,6 +29,7 @@
         <scene sceneID="i1g-IT-E4g">
             <objects>
                 <tabBarController id="hB7-as-pXw" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bqc-XO-Lb5"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="C6P-nU-MCX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -35,14 +37,31 @@
                         <color key="selectedImageTintColor" systemColor="systemOrangeColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="lLe-nX-oX6"/>
-                        <segue destination="YQe-wq-AlJ" kind="relationship" relationship="viewControllers" id="ujR-oH-dtR"/>
-                        <segue destination="LqE-lF-qCQ" kind="relationship" relationship="viewControllers" id="0rh-C5-BtB"/>
+                        <segue destination="Dk1-8t-FUo" kind="relationship" relationship="viewControllers" id="XAj-LX-88T"/>
+                        <segue destination="YQe-wq-AlJ" kind="relationship" relationship="viewControllers" id="TRQ-VU-NfR"/>
+                        <segue destination="LqE-lF-qCQ" kind="relationship" relationship="viewControllers" id="zb4-AK-fFj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wul-P6-ukz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1114" y="151"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="ZBP-bf-NHr">
+            <objects>
+                <navigationController id="Dk1-8t-FUo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="l7w-IE-CFb"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WFc-Ma-xjh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LR5-qq-Q6v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k8j-h0-2If" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-746" y="-554"/>
         </scene>
         <!--Favoriler-->
         <scene sceneID="cUU-2N-w07">
