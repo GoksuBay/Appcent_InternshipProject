@@ -24,4 +24,11 @@ extension ShoppingViewController {
             
         }
     }
+    @objc func refreshData(_ sender: Any) {
+        // Fetch Weather Data
+        
+        fetchData()
+        self.collectionView.reloadData()
+        self.refreshControl.endRefreshing()
+    }
 }

@@ -8,11 +8,11 @@
 import UIKit
 
 class ShoppingViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    
-    
+       
     var collectionView : UICollectionView!
     var wearList : WearCollectionViewModel!
+    let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createCollectionView()

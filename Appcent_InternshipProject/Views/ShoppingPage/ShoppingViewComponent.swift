@@ -22,6 +22,9 @@ extension ShoppingViewController{
         self.collectionView.frame = view.bounds
         self.collectionView.backgroundColor = .white
         self.view.addSubview(collectionView)
+        self.collectionView.refreshControl = self.refreshControl
+        
+        self.refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         
         
     }
