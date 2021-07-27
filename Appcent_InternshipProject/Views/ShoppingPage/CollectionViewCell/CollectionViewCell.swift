@@ -20,7 +20,7 @@ class CollectionViewCell: UICollectionViewCell , ReusableView {
     
     func createView(){
         productImage.image = UIImage(named: "testTshirt")
-        productImage.contentMode = .scaleAspectFit
+        productImage.contentMode = .scaleAspectFill
         self.contentView.addSubview(productImage)
         productImage.translatesAutoresizingMaskIntoConstraints = false
         productImage.layer.masksToBounds = true

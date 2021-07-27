@@ -17,10 +17,20 @@ class ShoppingViewController: UIViewController, UICollectionViewDataSource, UICo
         super.viewDidLoad()
         createCollectionView()
         fetchData()
-        
+        CoreDataService.shared.fetchFavourites()
     }
 
+    @objc func tapFavouriteButton(_ sender: UIButton){
+        let index = sender.tag
+        
+        if(!(CoreDataService.shared.addFavourites(wears: wearList.atIndexPath(index)))){alert(message: "Ürün zaten favoriler listenizde")}
+    }
     
+    func alert(message:String){
+            let alert = UIAlertController(title: "Hata", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
     
     
     

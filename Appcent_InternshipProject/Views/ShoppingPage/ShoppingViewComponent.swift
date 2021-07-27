@@ -25,6 +25,7 @@ extension ShoppingViewController{
         self.collectionView.refreshControl = self.refreshControl
         
         self.refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        self.refreshControl.tintColor = .systemYellow
         
         
     }
@@ -44,6 +45,9 @@ extension ShoppingViewController{
         cell.backgroundColor = .systemGray6
         
         let wearList = self.wearList.atIndexPath(indexPath.row)
+        cell.likeButton.tag = indexPath.row
+        cell.likeButton.addTarget(self, action: #selector(tapFavouriteButton), for: .touchUpInside)
+        cell.productImage.getImage(with: wearList.images[0])
         cell.category.text = wearList.category
         cell.title.text = wearList.title
         cell.rate.text = String(wearList.rate)
