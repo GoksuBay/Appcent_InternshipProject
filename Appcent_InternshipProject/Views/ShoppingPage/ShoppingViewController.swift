@@ -17,7 +17,7 @@ class ShoppingViewController: UIViewController, UICollectionViewDataSource, UICo
         super.viewDidLoad()
         createCollectionView()
         fetchData()
-        CoreDataService.shared.fetchFavourites()
+//        CoreDataService.shared.deleteAllData(entity: "Favourites")
     }
 
     @objc func tapFavouriteButton(_ sender: UIButton){

@@ -77,7 +77,7 @@ class TableViewCell: UITableViewCell , ReusableView {
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         priceLabel.layer.masksToBounds = true
         priceLabel.textColor = .black
-        priceLabel.text = "19,99"
+        priceLabel.text = "1,99"
         priceLabel.font = priceLabel.font.withSize(30)
         
     }
