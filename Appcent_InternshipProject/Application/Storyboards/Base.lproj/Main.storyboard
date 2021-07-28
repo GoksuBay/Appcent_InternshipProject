@@ -66,7 +66,7 @@
         <!--Favoriler-->
         <scene sceneID="cUU-2N-w07">
             <objects>
-                <viewController id="YQe-wq-AlJ" sceneMemberID="viewController">
+                <viewController id="YQe-wq-AlJ" customClass="FavouriteViewController" customModule="Appcent_InternshipProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fgl-j8-rhp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

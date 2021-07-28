@@ -19,6 +19,8 @@ class CollectionViewCell: UICollectionViewCell , ReusableView {
     let productImage = UIImageView()
     
     func createView(){
+        self.backgroundColor = .systemGray6
+        
         productImage.image = UIImage(named: "testTshirt")
         productImage.contentMode = .scaleAspectFill
         self.contentView.addSubview(productImage)

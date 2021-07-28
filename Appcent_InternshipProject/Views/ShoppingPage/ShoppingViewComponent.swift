@@ -42,9 +42,9 @@ extension ShoppingViewController{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.reuseIdentifier, for: indexPath) as! CollectionViewCell
-        cell.backgroundColor = .systemGray6
         
         let wearList = self.wearList.atIndexPath(indexPath.row)
+        
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(tapFavouriteButton), for: .touchUpInside)
         cell.productImage.getImage(with: wearList.images[0])
