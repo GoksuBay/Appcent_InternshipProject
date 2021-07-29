@@ -10,9 +10,13 @@ import UIKit
 class FavouriteViewController: UIViewController {
 
     let tableView = UITableView()
+    var searchController = UISearchController(searchResultsController: nil)
+    var favourites : WearCollectionViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createTableView()
+        createSearchBar()
         // Do any additional setup after loading the view.
     }
     

@@ -90,4 +90,13 @@ class CoreDataService {
         context.delete(managedObject)
         try! context.save()
     }
+    
+    func fetchFilteredData(with: String) -> [NSManagedObject]{
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favourites")
+        fetchRequest.returnsObjectsAsFaults = false
+        fetchRequest.predicate = NSPredicate(format: "title CONTAINS %@", with)
+        let results = try? context.fetch(fetchRequest)
+        return results as! [NSManagedObject]
+    }
 }

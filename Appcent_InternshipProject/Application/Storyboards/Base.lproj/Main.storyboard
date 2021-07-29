@@ -20,10 +20,29 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Alışveriş" image="cart.fill" catalog="system" id="KLd-e0-YDc"/>
                     <navigationItem key="navigationItem" id="X7E-Eq-78a"/>
+                    <connections>
+                        <segue destination="T6V-Sq-rKL" kind="show" id="dOd-pe-MM8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="841" y="-603"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="I0W-YF-8BN">
+            <objects>
+                <viewController id="T6V-Sq-rKL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tWL-Gy-bvG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="5RD-vh-Ssp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2aT-vP-OHu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2fk-5a-0h3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2229" y="-603"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="i1g-IT-E4g">
