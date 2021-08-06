@@ -95,7 +95,7 @@ class CoreDataService {
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favourites")
         fetchRequest.returnsObjectsAsFaults = false
-        fetchRequest.predicate = NSPredicate(format: "title CONTAINS %@", with)
+        fetchRequest.predicate = NSPredicate(format: "title CONTAINS[c] %@", with)
         let results = try? context.fetch(fetchRequest)
         return results as! [NSManagedObject]
     }

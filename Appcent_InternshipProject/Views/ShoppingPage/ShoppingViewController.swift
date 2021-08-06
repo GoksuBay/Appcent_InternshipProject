@@ -12,6 +12,7 @@ class ShoppingViewController: UIViewController, UICollectionViewDataSource, UICo
     var collectionView : UICollectionView!
     var wearList : WearCollectionViewModel!
     let refreshControl = UIRefreshControl()
+    var product : WearModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

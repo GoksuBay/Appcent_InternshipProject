@@ -25,6 +25,10 @@ class FavouriteViewController: UIViewController {
 
             tableView.reloadData()   // ...and it is also visible here.
         }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        searchController.isActive = false
+    }
     
    
     

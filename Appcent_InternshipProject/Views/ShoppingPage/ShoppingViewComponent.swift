@@ -8,6 +8,7 @@
 import UIKit
 
 extension ShoppingViewController{
+    
     func createCollectionView(){
         
         let layout = UICollectionViewFlowLayout()
@@ -59,6 +60,17 @@ extension ShoppingViewController{
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "productVC", sender: self)
+    }
+    
+    /* SEGUE NAVIGATOR */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let indexPath = collectionView.indexPathsForSelectedItems?.first
+        let vc = segue.destination as! ProductViewController
+        vc.product = wearList.wearList[indexPath!.row]
+    }
     
 }
 

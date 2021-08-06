@@ -21,17 +21,17 @@
                     <tabBarItem key="tabBarItem" title="Alışveriş" image="cart.fill" catalog="system" id="KLd-e0-YDc"/>
                     <navigationItem key="navigationItem" id="X7E-Eq-78a"/>
                     <connections>
-                        <segue destination="T6V-Sq-rKL" kind="show" id="dOd-pe-MM8"/>
+                        <segue destination="T6V-Sq-rKL" kind="show" identifier="productVC" id="dOd-pe-MM8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="841" y="-603"/>
         </scene>
-        <!--View Controller-->
+        <!--Product View Controller-->
         <scene sceneID="I0W-YF-8BN">
             <objects>
-                <viewController id="T6V-Sq-rKL" sceneMemberID="viewController">
+                <viewController id="T6V-Sq-rKL" customClass="ProductViewController" customModule="Appcent_InternshipProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tWL-Gy-bvG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,11 +65,11 @@
             </objects>
             <point key="canvasLocation" x="-1114" y="151"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="ZBP-bf-NHr">
             <objects>
                 <navigationController id="Dk1-8t-FUo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="l7w-IE-CFb"/>
+                    <tabBarItem key="tabBarItem" id="l7w-IE-CFb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WFc-Ma-xjh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -115,6 +115,7 @@
             <point key="canvasLocation" x="841" y="925"/>
         </scene>
     </scenes>
+    <color key="tintColor" systemColor="systemOrangeColor"/>
     <resources>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
