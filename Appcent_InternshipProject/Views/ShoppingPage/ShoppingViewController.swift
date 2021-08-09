@@ -8,7 +8,8 @@
 import UIKit
 
 class ShoppingViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-       
+    
+    @IBOutlet weak var cartButton: UIBarButtonItem!
     var collectionView : UICollectionView!
     var wearList : WearCollectionViewModel!
     let refreshControl = UIRefreshControl()
@@ -18,7 +19,7 @@ class ShoppingViewController: UIViewController, UICollectionViewDataSource, UICo
         super.viewDidLoad()
         createCollectionView()
         fetchData()
-//        CoreDataService.shared.deleteAllData(entity: "Favourites")
+        print(ShoppingCartService.shared.isEmpty())
     }
 
     @objc func tapFavouriteButton(_ sender: UIButton){
@@ -28,12 +29,14 @@ class ShoppingViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func alert(message:String){
-            let alert = UIAlertController(title: "Hata", message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
+        let alert = UIAlertController(title: "Hata", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
             self.present(alert, animated: true)
         }
     
-    
+    @objc func tapCartButton(_ sender: UIButton){
+        performSegue(withIdentifier: "cartVC", sender: self)
+    }
     
 
 }

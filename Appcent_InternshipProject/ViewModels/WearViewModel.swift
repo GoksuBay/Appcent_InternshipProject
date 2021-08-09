@@ -8,7 +8,7 @@
 import Foundation
 
 struct WearViewModel {
-    let wear : WearModel
+    var wear : WearModel
     
     var id : Int {
         return self.wear.id

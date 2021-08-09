@@ -28,6 +28,8 @@ extension ShoppingViewController{
         self.refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         self.refreshControl.tintColor = .systemYellow
         
+        self.cartButton.target = self
+        self.cartButton.action = #selector(tapCartButton(_:))
         
     }
      
@@ -67,9 +69,12 @@ extension ShoppingViewController{
     /* SEGUE NAVIGATOR */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let indexPath = collectionView.indexPathsForSelectedItems?.first
-        let vc = segue.destination as! ProductViewController
-        vc.product = wearList.wearList[indexPath!.row]
+        if(segue.identifier == "productVC"){
+            let indexPath = collectionView.indexPathsForSelectedItems?.first
+            let vc = segue.destination as! ProductViewController
+            vc.product = wearList.wearList[indexPath!.row]
+        }
+
     }
     
 }

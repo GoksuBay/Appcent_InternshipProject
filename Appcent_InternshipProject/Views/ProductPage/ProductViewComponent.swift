@@ -59,23 +59,32 @@ extension ProductViewController {
         addButton.layer.cornerRadius = 10
         addButton.setTitle("Sepete ekle", for: .normal)
         addButton.setTitleColor(.white, for: .normal)
+        addButton.addTarget(self, action: #selector(add2Cart), for: .touchUpInside)
         
         self.view.addSubview(stepper)
         stepper.translatesAutoresizingMaskIntoConstraints = false
         stepper.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -16).isActive = true
         stepper.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16).isActive = true
-        stepper.minimumValue = 0
+        stepper.minimumValue = 1
         stepper.tintColor = .systemOrange
         stepper.setIncrementImage(stepper.incrementImage(for: .normal), for: .normal)
         stepper.setDecrementImage(stepper.decrementImage(for: .normal), for: .normal)
         stepper.layer.borderWidth = 1
         stepper.layer.borderColor = UIColor.systemOrange.cgColor
+        stepper.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
+        
+        self.view.addSubview(amountLabel)
+        amountLabel.translatesAutoresizingMaskIntoConstraints = false
+        amountLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 16).isActive = true
+        amountLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -56).isActive = true
+        amountLabel.text = String(Int(stepper.value))
     }
     
     func setInfo(){
         category.text = product.category
         productTitle.text = product.title
         desc.text = product.description
-        price.text = "₺ " + product.price
+        price.text = "₺ " + String.init(format: "%.2f", stepper.value * priceValue)
+        self.navigationController?.navigationBar.topItem?.backButtonTitle = ""
     }
 }
