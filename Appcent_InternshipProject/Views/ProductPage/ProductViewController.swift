@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductViewController: UIViewController {
+class ProductViewController: UIViewController , UICollectionViewDelegateFlowLayout{
     
 //    let collectionView = UICollectionView()
     var product : WearModel!
@@ -20,7 +20,8 @@ class ProductViewController: UIViewController {
     let addButton = UIButton()
     let amountLabel = UILabel()
     var priceValue : Double!
-    
+    var collectionView : UICollectionView!
+    let pageControl = UIPageControl()
     
 
     override func viewDidLoad() {
@@ -30,6 +31,7 @@ class ProductViewController: UIViewController {
         product.price = product.price.replacingOccurrences(of: ".", with: "")
         priceValue = Double.init(product.price.replacingOccurrences(of: ",", with: "."))!/100
         setInfo()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -42,6 +44,8 @@ class ProductViewController: UIViewController {
         ShoppingCartService.shared.addtoCart(item: ShoppingModel.init(product: product, count: Int(stepper.value)))
         self.navigationController?.popToRootViewController(animated: true)
     }
+    
+    
 
     /*
     // MARK: - Navigation

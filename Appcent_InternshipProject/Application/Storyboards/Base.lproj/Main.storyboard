@@ -36,7 +36,7 @@
                     <connections>
                         <outlet property="cartButton" destination="MQq-lP-hos" id="PKR-tg-qbg"/>
                         <segue destination="T6V-Sq-rKL" kind="show" identifier="productVC" id="dOd-pe-MM8"/>
-                        <segue destination="Hjz-vp-gvV" kind="show" identifier="cartVC" id="Tzo-gR-nKV"/>
+                        <segue destination="06x-lm-wDo" kind="show" identifier="cartVC" id="ofm-wL-XK5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -97,21 +97,6 @@
             </objects>
             <point key="canvasLocation" x="-746" y="-554"/>
         </scene>
-        <!--Cart View Controller-->
-        <scene sceneID="p5K-xt-7jH">
-            <objects>
-                <viewController id="Hjz-vp-gvV" customClass="CartViewController" customModule="Appcent_InternshipProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WAR-Vl-2fz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="CUR-55-3kp"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wck-18-jCl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2229" y="151"/>
-        </scene>
         <!--Favoriler-->
         <scene sceneID="cUU-2N-w07">
             <objects>
@@ -127,6 +112,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gWx-ox-kAj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="841" y="151"/>
+        </scene>
+        <!--Cart View Controller-->
+        <scene sceneID="6hW-Za-bWd">
+            <objects>
+                <viewController id="06x-lm-wDo" customClass="CartViewController" customModule="Appcent_InternshipProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T3B-oa-yos">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="PjN-aS-N9r"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GMP-GO-ApD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tdP-73-tR1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2229" y="151"/>
         </scene>
         <!--Profil-->
         <scene sceneID="ngs-wp-bNa">

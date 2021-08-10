@@ -19,7 +19,6 @@ class ShoppingViewController: UIViewController, UICollectionViewDataSource, UICo
         super.viewDidLoad()
         createCollectionView()
         fetchData()
-        print(ShoppingCartService.shared.isEmpty())
     }
 
     @objc func tapFavouriteButton(_ sender: UIButton){

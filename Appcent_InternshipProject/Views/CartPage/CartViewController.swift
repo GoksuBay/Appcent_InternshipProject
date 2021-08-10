@@ -8,13 +8,18 @@
 import UIKit
 
 class CartViewController: UIViewController {
+    
+    let tableView = UITableView()
+    let paymentButton = UIButton()
+    let totalPrice = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(ShoppingCartService.shared.isEmpty())
+        createView()
 
         // Do any additional setup after loading the view.
     }
+    
     
 
     /*

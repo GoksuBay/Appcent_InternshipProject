@@ -20,4 +20,25 @@ class ShoppingCartService {
     func isEmpty() -> Bool{
         return productList.count == 0
     }
+    
+    func getCartItems() -> [ShoppingModel]{
+        return productList
+    }
+    
+    func getCount() -> Int{
+        return productList.count
+    }
+    
+    func removeItem(index:Int){
+        productList.remove(at: index)
+    }
+    
+    func getTotalPrice() -> Double{
+        var sum : Double = 0
+        for product in productList {
+            sum += Double(product.product.price)! * Double(product.count)
+        }
+        
+        return sum/100
+    }
 }

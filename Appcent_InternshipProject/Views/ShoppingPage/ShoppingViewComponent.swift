@@ -13,7 +13,7 @@ extension ShoppingViewController{
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 5
+        layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 5
         self.collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell , ReusableView {
+class CartTableViewCell: UITableViewCell , ReusableView {
     
     let image = UIImageView()
     let discountLabel = UILabel()
