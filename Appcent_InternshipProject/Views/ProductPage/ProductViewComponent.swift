@@ -90,6 +90,7 @@ extension ProductViewController : UICollectionViewDelegate, UICollectionViewData
         pageControl.pageIndicatorTintColor = .white
         pageControl.numberOfPages = product.images.count
         pageControl.hidesForSinglePage = true
+        pageControl.isEnabled = false
         
     }
     
@@ -111,6 +112,7 @@ extension ProductViewController : UICollectionViewDelegate, UICollectionViewData
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         self.collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.reuseIdentifier)
+        self.collectionView.showsHorizontalScrollIndicator = false
         self.view.addSubview(collectionView)
         
     }
@@ -150,8 +152,9 @@ extension ProductViewController : UICollectionViewDelegate, UICollectionViewData
         let roundedIndex = round(index)
         self.pageControl.currentPage = Int(roundedIndex)
     }
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-
+        self.collectionView.scrollToNearestVisibleCollectionViewCell()
         pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
     }
 
@@ -160,6 +163,11 @@ extension ProductViewController : UICollectionViewDelegate, UICollectionViewData
         pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
     }
     
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            self.collectionView.scrollToNearestVisibleCollectionViewCell()
+        }
+    }
 
     
 }
